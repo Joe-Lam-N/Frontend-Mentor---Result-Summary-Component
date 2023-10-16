@@ -1,0 +1,199 @@
+@font-face{
+    font-family: 'HankenGrotestk';
+    font-display:swap;
+    font-weight: 100 900;
+    src: url('assets/fonts/HankenGrotesk-VariableFont_wght.ttf') format('truetype');
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    font:inherit;
+}
+
+:root{
+
+    /* primary colors */
+    --light-red: hsl(0, 100%, 67%);
+    --orangey-yellow: hsl(39, 100%, 56%);
+    --green-teal:hsl(166, 100%, 37%);
+    --bobalt-blue:hsl(234, 85%, 45%);
+
+    /* Neutral colors */
+    --white:hsl(0, 0%, 100%);
+    --pale-blue:hsl(221, 100%, 96%);
+    --light-lavender:hsl(241, 100%, 89%);
+    --dark-gray-blue:hsl(224, 30%, 27%);
+    /* Gradients background */
+    --light-state-blue:hsl(252, 100%, 67%);
+    --light-royal-blue:hsl(241, 81%, 54%);
+    /* Gradients circle */
+    --violet-blue:hsla(256, 72%, 46%, 1);
+    --persian-blue:hsla(241, 72%, 46%, 0);
+    /* results font color */
+    --white-hsla:hsla(0, 0%, 100%, 0.87);
+    /* Summary Background colors */
+    --light-red-hsla:hsla(0, 100%, 67%, .07);
+    --orangey-yellow-hsla:hsla(39, 100%, 56%,.07);
+    --green-teal-hsla:hsla(166, 100%, 37%,.07);
+    --bobalt-blue-hsla:hsla(234, 85%, 45%,.07);;
+
+    /* - Mobile: 375px
+    - Desktop: 1440px
+    - Font size (paragraphs): 18px
+    - Family: [Hanken Grotesk](https://fonts.google.com/specimen/Hanken+Grotesk)
+    - Weights: 500, 700, 800 */
+}
+
+img,
+svg{
+    display:block;
+    max-width: 100%;
+}
+body{
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;    
+    align-items: center;
+    border-radius: 16px;
+    font-family: 'HankenGrotestk', sans-serif;
+    background-color: var(--white);
+    box-shadow:  20px  20px 50px hsla(0, 0%, 7%, 0.185); 
+}
+
+
+.result-container{
+    display: flex;
+
+    height: 350px;
+    width: 250px;
+    flex-flow: column;
+    background: linear-gradient(var(--light-state-blue),var(--light-royal-blue));
+    align-items: center;
+    padding: 1rem 2rem;
+    color: var(--white-hsla);
+    border-radius: 15px;
+}
+.result-container h1{
+    padding:1.25rem;
+    font-size:1rem;
+    font-weight: 500;
+
+}
+.result-container .score{
+    display: flex;
+    flex-flow: column;
+    height: 120px;
+    width: 120px;
+    border-radius: 60px;
+    background: linear-gradient(var(--violet-blue), var(--persian-blue));
+    text-align: center;
+    justify-content: center;
+}
+.result-container .score span{
+    font-size: 3rem;
+    font-weight: 800;
+}
+.result-container h2{
+    font-size:1.5rem;
+    font-weight: 800;
+    padding:1rem;
+}
+.result-container{
+    text-align: center;
+    font-size: .80rem;
+    font-weight: 300;
+}
+
+.summary-container{
+    display:flex;
+    flex-flow: column;
+    height: 350px;
+    width: 250px;
+    padding: 1rem;
+}
+.summary-container h2{
+    padding: 1rem 0rem;
+    font-weight: 800;
+    font-size: 1.2rem;
+}
+
+.summary-score{
+
+    display:flex;
+    flex-flow: row;
+    justify-content: space-between;
+    padding: .50rem .5rem;
+    margin:.3rem 0rem;
+    border-radius: .5rem;
+}
+.rightScore{
+    display:flex;
+    flex-flow: row;
+    justify-content: space-between;
+}
+
+.summary-score:nth-child(2){
+    color: var(--light-red);
+    background-color: var(--light-red-hsla);
+}
+.summary-score:nth-child(3){
+    color: var(--orangey-yellow);
+    background-color:var(--orangey-yellow-hsla) ;
+}
+.summary-score:nth-child(4){
+    color: var(--green-teal);
+    background-color: var(--green-teal-hsla);
+}
+.summary-score:nth-child(5){
+    color: var(--bobalt-blue);
+    background-color: var(--bobalt-blue-hsla);
+}
+
+.summary-score span{
+    font-weight: 700;
+    color: var(--dark-gray-blue);
+}
+.leftScore{
+    color:hsla(224, 30%, 27%,.7)
+}
+.rightScore p{
+    padding-left: .6rem;
+}
+
+
+
+.summary-container button{
+    background-color: var(--dark-gray-blue);
+    padding: .50rem;
+    margin: 1rem 0rem;
+    color: var(--white);
+    border-radius: 1.5rem;
+    font-size: .8rem;
+    font-weight: 500;
+    border:none
+}
+:is(.summary-container) button:hover, button-foucs{
+    background: linear-gradient(var(--light-state-blue),var(--light-royal-blue));
+
+}
+@media screen and (max-width:375px){
+    .main-container{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+    .result-container{
+        border-radius: 0 0 15px 15px;
+        width:100vw;
+        height: 50vh;
+    }
+    .summary-container{
+        width:100vw;
+        height: 50vh;
+    }
+}
